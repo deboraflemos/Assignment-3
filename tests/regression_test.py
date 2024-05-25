@@ -1,6 +1,6 @@
 import torch
 import pytest
-from regression import fit_regression_model
+from src.regression import fit_regression_model
 
 
 def get_train_data(dim=1):
