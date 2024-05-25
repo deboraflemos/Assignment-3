@@ -32,7 +32,7 @@ def fit_regression_model(X, y):
     Hint 3: you can use the previos_loss variable to stop the training when the loss is not changing much.
     """
     learning_rate = 0.001 # Pick a better learning rate
-    num_epochs = 1000 # Pick a better number of epochs
+    num_epochs = 10_000 # Pick a better number of epochs
     input_features = X.shape[1] # extract the number of features from the input `shape` of X
     output_features = y.shape[1] # extract the number of features from the output `shape` of y
     model = create_linear_regression_model(input_features, output_features)
@@ -49,6 +49,6 @@ def fit_regression_model(X, y):
             break
         previous_loss = loss.item()
         # This is a good place to print the loss every 1000 epochs.
-        if (epoch+1) % 1000 == 0:
+        if (epoch+1) % 1_000 == 0:
             print('Epoch %d, Loss %f' % (epoch+1, float(loss.item())))
     return model, loss
